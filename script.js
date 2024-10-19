@@ -25,10 +25,11 @@ heart.addEventListener("click", () => {
             flipbook.classList.add("visible");
           }, 10); // Petit délai pour permettre la transition
   
+          
           // Initialise le flipbook avec Turn.js
           $('#flipbook').turn({
-            width: 400,
-            height: 300,
+            width: window.innerWidth * 0.6, // Ajuste à 80% de la largeur de l'écran
+            height: (window.innerWidth * 0.6) * 2 / 3, // Ajuste la hauteur avec un ratio 4:3
             autoCenter: true
           });
         }, 2000); // Délai pour correspondre à la durée de l'effet de fondu
