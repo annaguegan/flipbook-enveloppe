@@ -6,7 +6,6 @@
     --envelope-cover: #102C56;
     --shadow-color: rgba(0, 0, 0, 0.2);
     --txt-color: #444;
-    --heart-color: white;
 }
 
 body {
@@ -85,37 +84,6 @@ body {
     font-size: 10px;
 }
 
-.heart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    background-image: url("img/logo-noir.jpg");
-    z-index: 4;
-    transform: translate(-50%, -20%) rotate(-45deg);
-    transition: transform 0.5s ease-in-out 1s;
-    box-shadow: 0 1px 6px var(--shadow-color);
-    cursor: pointer;
-}
-
-.heart::before,
-.heart::after {
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-image: url("img/logo-noir.jpg");
-    border-radius: 50%;
-}
-
-.heart::before {
-    top: -7.5px;
-}
-
-.heart::after {
-    right: -7.5px;
-}
 
 /* Animation d'ouverture de l'enveloppe */
 .flap .envelope::before {
@@ -129,10 +97,6 @@ body {
     transition-delay: 1s;
 }
 
-.flap .heart {
-    transform: rotate(45deg);
-    transition-delay: 0.4s;
-}
 
 .envelope {
     cursor: pointer;
@@ -143,9 +107,9 @@ body {
     opacity: 0;
     transition: opacity 2s ease-in-out;
     position:absolute !important;
-    top: 50%;            /* Positionne le flipbook à 50% de la hauteur de la page */
-    left: 50%;           /* Positionne le flipbook à 50% de la largeur de la page */
-    transform: translate(-50%, -50%) !important; /* Centre l'élément exactement au milieu */
+    top: 50%;            /* Positionne le flipbook Ã  50% de la hauteur de la page */
+    left: 50%;           /* Positionne le flipbook Ã  50% de la largeur de la page */
+    transform: translate(-50%, -50%) !important; /* Centre l'Ã©lÃ©ment exactement au milieu */
     z-index: 10;
 }
 
@@ -170,4 +134,22 @@ body {
     width: 300px;
     height: 230px;
     transition: transform 1.5s ease-in-out; /* Transition plus douce pour le mouvement de l'enveloppe */
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px; /* Ajuste la taille selon tes besoins */
+    height: 50px; /* Ajuste la taille selon tes besoins */
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease-in-out 1s;
+    cursor: pointer;
+    z-index:8;
+}
+
+/* Animation d'ouverture de l'enveloppe avec l'image */
+.flap .logo {
+    transform: rotate(45deg) translate(-50%, -50%);
+    transition-delay: 0.4s;
 }
