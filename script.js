@@ -26,7 +26,7 @@ function adjustFlipbookSize() {
     $('#flipbook').turn("size", flipbookWidth, flipbookHeight);
 }
 
-heart.addEventListener("click", () => {
+envelope.addEventListener("click", () => {
     envelope.classList.toggle("flap");
   
     // Ajoute un délai pour commencer à déplacer l'enveloppe
@@ -73,9 +73,9 @@ heart.addEventListener("click", () => {
             height: flipbookHeight, // Ajuste la hauteur avec un ratio 4:3
             autoCenter: true
           });
-        }, 2000); // Délai pour correspondre à la durée de l'effet de fondu
-      }, 1500); // Délai correspondant à la durée du mouvement de l'enveloppe
-    }, 2000); // Légère attente après l'animation de l'enveloppe
+        }, 1000); // Délai pour correspondre à la durée de l'effet de fondu
+      }, 1000); // Délai correspondant à la durée du mouvement de l'enveloppe
+    }, 1000); // Légère attente après l'animation de l'enveloppe
   });
   
   window.addEventListener('resize', adjustFlipbookSize);
