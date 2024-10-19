@@ -3,6 +3,29 @@ const heart = document.querySelector(".heart");
 const letter = document.getElementById("letter");
 const flipbook = document.getElementById("flipbook");
 
+function adjustFlipbookSize() {
+    const screenWidth = window.innerWidth;
+    let flipbookWidth, flipbookHeight;
+
+    // Adapte la taille en fonction de la largeur de l'écran
+    if (screenWidth > 1024) {
+        // Ordinateur : 80% de la largeur de l'écran
+        flipbookWidth = screenWidth * 0.7;
+        flipbookHeight = flipbookWidth * 2 / 3; // Ratio 2:3
+    } else if (screenWidth > 768) {
+        // Tablette : 90% de la largeur de l'écran
+        flipbookWidth = screenWidth * 0.9;
+        flipbookHeight = flipbookWidth * 4 / 5; // Ratio 4:5 pour une meilleure visibilité sur tablette
+    } else {
+        // Téléphone : 100% de la largeur de l'écran
+        flipbookWidth = screenWidth * 0.98;
+        flipbookHeight = flipbookWidth * 5/6; // Ratio 1:1.2 pour téléphone (plus grand en hauteur)
+    }
+
+    // Applique les nouvelles dimensions au flipbook
+    $('#flipbook').turn("size", flipbookWidth, flipbookHeight);
+}
+
 heart.addEventListener("click", () => {
     envelope.classList.toggle("flap");
   
@@ -26,10 +49,28 @@ heart.addEventListener("click", () => {
           }, 10); // Petit délai pour permettre la transition
   
           
+          const screenWidth = window.innerWidth;
+          let flipbookWidth, flipbookHeight;
+      
+          // Adapte la taille en fonction de la largeur de l'écran
+          if (screenWidth > 1024) {
+            // Ordinateur : 80% de la largeur de l'écran
+            flipbookWidth = screenWidth * 0.7;
+            flipbookHeight = flipbookWidth * 2 / 3; // Ratio 2:3
+            } else if (screenWidth > 768) {
+                // Tablette : 90% de la largeur de l'écran
+                flipbookWidth = screenWidth * 0.9;
+                flipbookHeight = flipbookWidth * 4 / 5; // Ratio 4:5 pour une meilleure visibilité sur tablette
+            } else {
+                // Téléphone : 100% de la largeur de l'écran
+                flipbookWidth = screenWidth * 0.98;
+                flipbookHeight = flipbookWidth * 5/6; // Ratio 1:1.2 pour téléphone (plus grand en hauteur)
+            }
+
           // Initialise le flipbook avec Turn.js
           $('#flipbook').turn({
-            width: window.innerWidth * 0.9, // Ajuste à 80% de la largeur de l'écran
-            height: (window.innerWidth * 0.9) * 2 / 3, // Ajuste la hauteur avec un ratio 4:3
+            width: flipbookWidth, // Ajuste à 80% de la largeur de l'écran
+            height: flipbookHeight, // Ajuste la hauteur avec un ratio 4:3
             autoCenter: true
           });
         }, 2000); // Délai pour correspondre à la durée de l'effet de fondu
@@ -37,6 +78,7 @@ heart.addEventListener("click", () => {
     }, 2000); // Légère attente après l'animation de l'enveloppe
   });
   
+  window.addEventListener('resize', adjustFlipbookSize);
   
   
 
