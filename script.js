@@ -73,6 +73,9 @@ envelope.addEventListener("click", () => {
             height: flipbookHeight, // Ajuste la hauteur avec un ratio 4:3
             autoCenter: true
           });
+            setTimeout(function(){
+              $('#flipbook').turn("next");
+          }, 3000);  // Adjust the delay time as needed
         }, 1000); // Délai pour correspondre à la durée de l'effet de fondu
       }, 1000); // Délai correspondant à la durée du mouvement de l'enveloppe
     }, 1000); // Légère attente après l'animation de l'enveloppe
