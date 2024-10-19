@@ -28,8 +28,8 @@ heart.addEventListener("click", () => {
           
           // Initialise le flipbook avec Turn.js
           $('#flipbook').turn({
-            width: window.innerWidth * 0.6, // Ajuste à 80% de la largeur de l'écran
-            height: (window.innerWidth * 0.6) * 2 / 3, // Ajuste la hauteur avec un ratio 4:3
+            width: window.innerWidth * 0.8, // Ajuste à 80% de la largeur de l'écran
+            height: (window.innerWidth * 0.8) * 2 / 3, // Ajuste la hauteur avec un ratio 4:3
             autoCenter: true
           });
         }, 2000); // Délai pour correspondre à la durée de l'effet de fondu
