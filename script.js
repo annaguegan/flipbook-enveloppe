@@ -4,21 +4,38 @@ const letter = document.getElementById("letter");
 const flipbook = document.getElementById("flipbook");
 
 heart.addEventListener("click", () => {
-  envelope.classList.toggle("flap");
+    envelope.classList.toggle("flap");
+  
+    // Ajoute un délai pour commencer à déplacer l'enveloppe
+    setTimeout(() => {
+      // Fait coulisser l'enveloppe vers le haut en douceur
+      envelope.style.transform = "translateY(-100px)"; // Ajuste la valeur selon le déplacement souhaité
+      envelope.style.transition = "transform 1.5s ease-in-out"; // Durée et easing pour un mouvement fluide
+  
+      // Après le mouvement de l'enveloppe, ajoute l'effet de fondu de la lettre
+      setTimeout(() => {
+        letter.classList.add("fade-out");
 
-  // Ajoute un délai pour cacher la lettre après l'animation
-  setTimeout(() => {
-    // Cache la lettre après l'ouverture de l'enveloppe
-    letter.style.display = "none";
+  
+        // Utilise un délai pour cacher complètement la lettre après l'effet de fondu
+        setTimeout(() => {
+          // Affiche le flipbook
+          flipbook.classList.remove("hidden");
+          setTimeout(function() {
+            flipbook.classList.add("visible");
+          }, 10); // Petit délai pour permettre la transition
+  
+          // Initialise le flipbook avec Turn.js
+          $('#flipbook').turn({
+            width: 400,
+            height: 300,
+            autoCenter: true
+          });
+        }, 2000); // Délai pour correspondre à la durée de l'effet de fondu
+      }, 1500); // Délai correspondant à la durée du mouvement de l'enveloppe
+    }, 2000); // Légère attente après l'animation de l'enveloppe
+  });
+  
+  
+  
 
-    // Affiche le flipbook
-    flipbook.style.display = "block";
-
-    // Initialise le flipbook avec Turn.js
-    $('#flipbook').turn({
-      width: 400,
-      height: 300,
-      autoCenter: true
-    });
-  }, 2000); // Délai correspondant à la durée de l'animation de l'enveloppe
-});

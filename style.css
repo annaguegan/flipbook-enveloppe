@@ -134,3 +134,35 @@ body {
     transition-delay: 0.4s;
 }
 
+.envelope {
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.flipbook {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.envelope-wrapper {
+    background: var(--bg-envelope-color);
+    box-shadow: 0 0 40px var(--shadow-color);
+    position: relative;
+    width: 300px;
+    height: 230px;
+    transition: transform 1.5s ease-in-out; /* Transition plus douce pour le mouvement de l'enveloppe */
+}
