@@ -22,7 +22,7 @@ function adjustFlipbookSize() {
 }
 
 // envelope.addEventListener("click", () => {
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
     envelope.classList.toggle("flap");
   
     setTimeout(() => {
@@ -62,7 +62,7 @@ window.onload = function() {
           }, 2000);
       }, 4000);
     }, 1000);
-  };
+  });
   window.addEventListener('resize', adjustFlipbookSize);
 
   page1.addEventListener("click", () => {
