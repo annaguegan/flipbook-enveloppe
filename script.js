@@ -72,4 +72,4 @@ window.onload = function() {
 
   page2.addEventListener("click", () => {
     $('#flipbook').turn("previous");
-  });
+  }); //testtttt
