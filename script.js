@@ -27,7 +27,6 @@ window.onload = function() {
   
     setTimeout(() => {
       envelope.style.transform = "translateY(-100px)";
-      envelope.style.transition = "transform 1.5s ease-in-out";
   
       setTimeout(() => {
         letter.classList.add("fade-out");
@@ -35,7 +34,7 @@ window.onload = function() {
           flipbook.classList.remove("hidden");
           setTimeout(function() {
             flipbook.classList.add("visible");
-          }, 10);
+          }, 100);
   
           
           const screenWidth = window.innerWidth;
@@ -56,12 +55,12 @@ window.onload = function() {
             width: flipbookWidth,
             height: flipbookHeight,
             autoCenter: true,
-            duration: 2000
+            duration: 3500
           });
             setTimeout(function(){
               $('#flipbook').turn("next");
-          }, 2500);
-      }, 1000);
+          }, 2000);
+      }, 4000);
     }, 1000);
   };
   window.addEventListener('resize', adjustFlipbookSize);
@@ -72,4 +71,4 @@ window.onload = function() {
 
   page2.addEventListener("click", () => {
     $('#flipbook').turn("previous");
-  }); //testtttt
+  });

@@ -1,9 +1,9 @@
 :root {
     --primary: #fff;
     --bg-color: white;
-    --bg-envelope-color: #18396b;
-    --envelope-tab: #18396b;
-    --envelope-cover: #102C56;
+    --bg-envelope-color: #133464;
+    --envelope-tab: #133464;
+    --envelope-cover: #0c254a;
     --shadow-color: rgba(0, 0, 0, 0.2);
     --txt-color: #444;
 }
@@ -49,7 +49,7 @@ body {
     border-right: 150px solid transparent;
     border-left: 150px solid transparent;
     transform-origin: top;
-    transition: all 0.5s ease-in-out 0.7s;
+    transition: all 1.5s ease-in-out 1s;
 }
 
 .envelope::after {
@@ -89,12 +89,13 @@ body {
 .flap .envelope::before {
     transform: rotateX(180deg);
     z-index: 0;
+    transition: all 3s ease-in-out;
 }
 
 .flap .letter {
     bottom: 100px;
     transform: scale(1.5);
-    transition-delay: 1s;
+    transition: all 3s ease-in-out 1.5s;
 }
 
 
@@ -105,7 +106,7 @@ body {
 
 .flipbook {
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
     position:absolute !important;
     top: 50%;            /* Positionne le flipbook à 50% de la hauteur de la page */
     left: 50%;           /* Positionne le flipbook à 50% de la largeur de la page */
@@ -133,7 +134,7 @@ body {
     position: relative;
     width: 300px;
     height: 230px;
-    transition: transform 1.5s ease-in-out; /* Transition plus douce pour le mouvement de l'enveloppe */
+    transition: transform 2.5s ease-in-out;
 }
 
 .logo {
@@ -143,7 +144,7 @@ body {
     width: 50px; /* Ajuste la taille selon tes besoins */
     height: 50px; /* Ajuste la taille selon tes besoins */
     transform: translate(-50%, -50%);
-    transition: transform 0.5s ease-in-out 1s;
+    transition: transform 2s ease-in-out 1s;
     cursor: pointer;
     z-index:8;
 }
@@ -151,7 +152,7 @@ body {
 /* Animation d'ouverture de l'enveloppe avec l'image */
 .flap .logo {
     transform: rotate(45deg) translate(-50%, -50%);
-    transition-delay: 0.4s;
+    transition-delay: 0.1s;
 }
 
 .absolute-image {
