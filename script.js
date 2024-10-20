@@ -32,7 +32,6 @@ window.onload = function() {
       setTimeout(() => {
         letter.classList.add("fade-out");
 
-        setTimeout(() => {
           flipbook.classList.remove("hidden");
           setTimeout(function() {
             flipbook.classList.add("visible");
@@ -62,8 +61,15 @@ window.onload = function() {
             setTimeout(function(){
               $('#flipbook').turn("next");
           }, 2500);
-        }, 1000);
       }, 1000);
     }, 1000);
   };
   window.addEventListener('resize', adjustFlipbookSize);
+
+  page1.addEventListener("click", () => {
+    $('#flipbook').turn("next");
+  });
+
+  page2.addEventListener("click", () => {
+    $('#flipbook').turn("previous");
+  });
