@@ -107,9 +107,9 @@ body {
     opacity: 0;
     transition: opacity 2s ease-in-out;
     position:absolute !important;
-    top: 50%;            /* Positionne le flipbook Ã  50% de la hauteur de la page */
-    left: 50%;           /* Positionne le flipbook Ã  50% de la largeur de la page */
-    transform: translate(-50%, -50%) !important; /* Centre l'Ã©lÃ©ment exactement au milieu */
+    top: 50%;            /* Positionne le flipbook à 50% de la hauteur de la page */
+    left: 50%;           /* Positionne le flipbook à 50% de la largeur de la page */
+    transform: translate(-50%, -50%) !important; /* Centre l'élément exactement au milieu */
     z-index: 10;
 }
 
@@ -152,4 +152,15 @@ body {
 .flap .logo {
     transform: rotate(45deg) translate(-50%, -50%);
     transition-delay: 0.4s;
+}
+
+.absolute-image {
+    position: absolute;
+    top: 5%; /* Ajuste la position verticale */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Centrage de l'image */
+    width: 45%; /* Ajuste la taille de l'image */
+    height: auto; /* Garde les proportions */
+    z-index:15;
+    border-radius : 50%;
 }
